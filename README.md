@@ -1,5 +1,8 @@
 # witchvim.nvim
+
 just seemed like a fun little project
+
+if you wanna use potion you'll need to make lua/potion and place plugin configs in there
 
 ## basic implementation
 ```lua
@@ -25,17 +28,13 @@ wv.spellbook(function(spell) -- packer is already added for simplicity
 	spell({ "nvim-lua/popup.nvim" }) -- Popup API
 	spell({ -- 175x faster then filetype.vim
     "nathom/filetype.nvim",
-    config = function()
-      -- we dont need filetype.vim since we use nathom/filetype.nvim
-		  wv.g.did_load_filetypes = 1
-    end
+    -- we dont need filetype.vim since we use nathom/filetype.nvim
+    config = function() wv.g.did_load_filetypes = 1 end
   })
 	spell({ -- decouple updatetime from CursorHold and CursorHoldI (works for Vim and Neovim)
 		"antoinemadec/FixCursorHold.nvim",
 		event = "BufRead",
-		config = function()
-			vim.g.cursorhold_updatetime = 100
-		end,
+		config = function() vim.g.cursorhold_updatetime = 100 end,
 	})
 	spell({ -- notification plugin
 		"rcarriga/nvim-notify",
@@ -50,7 +49,6 @@ wv.spellbook(function(spell) -- packer is already added for simplicity
 		}
 	})
 end)
-
 
 local status_ok, alpha = pcall(require, "alpha")
 if not status_ok then
@@ -69,5 +67,4 @@ dashboard.section.buttons.val = {
 dashboard.section.footer.val = wv.views.footer()
 dashboard.opts.opts.noautocmd = true
 alpha.setup(dashboard.opts)
-
 ```

@@ -144,6 +144,48 @@ function wv.hex(key, value, scopes)
 	end
 end
 
+--- syntatic sugar for requireing a plugin config file in potions
+--- ex: potion("lualine") -> where the config file is lualine.lua
+--- or a director lualine/init.lua
+--- @param file string the name of the file or folder if it contains init.lua
+--- @return module
+function wv.potion(file)
+	return wv.fmt([[require("potions.%s")]], file)
+end
+
+
+-- colorschemes
+wv.themes = {
+	catppuccin = "catppuccin/nvim",
+	aquarium = "FrenzyExists/aquarium-vim",
+	substrata = "kvrohit/substrata.nvim",
+	onedarkpro = "olimorris/onedarkpro.nvim",
+	kanagawa = "rebelot/kanagawa.nvim",
+	moonlight = "shaunsingh/moonlight.nvim",
+	monochrome = "kdheepak/monochrome.nvim",
+	rosepine = "rose-pine/neovim",
+	neon = "rafamadriz/neon",
+	vscode = "Mofiqul/vscode.nvim",
+	material = "marko-cerovac/material.nvim",
+	nightfly = "bluz71/vim-nightfly-guicolors",
+	boo = "rockerBOO/boo-colorscheme-nvim",
+	ariake = "jim-at-jibba/ariake-vim-colors",
+	tokyonight = "folke/tokyonight.nvim",
+	doomone = "NTBBloodbath/doom-one.nvim",
+}
+
+--- set the colorscheme
+--- @param theme string the name of the colorscheme if using a theme in lua/theme/
+--- @param colorbuddy boolean if you want to use colorbuddy
+--- @return void
+function wv.robes(theme)
+	local status_ok, _ = pcall(wv.cast, "colorscheme " .. theme)
+	if not status_ok then
+		wv.log.debug(wv.fmt("could not apply %s as a colorscheme is it downloaded?", theme))
+	end
+end
+
+
 --- load packer if needed otherwise use spellbook like packer.startup
 --- @param fn function
 --- @return nil
@@ -180,5 +222,6 @@ function wv.spellbook(fn)
 		},
 	})
 end
+
 
 return wv
