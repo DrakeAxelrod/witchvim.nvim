@@ -149,7 +149,7 @@ end
 --- or a director lualine/init.lua
 --- @param file string the name of the file or folder if it contains init.lua
 --- @return module
-function wv.potion(file)
+function wv.brew(file)
 	return wv.fmt([[require("potions.%s")]], file)
 end
 
@@ -176,7 +176,6 @@ wv.themes = {
 
 --- set the colorscheme
 --- @param theme string the name of the colorscheme if using a theme in lua/theme/
---- @param colorbuddy boolean if you want to use colorbuddy
 --- @return void
 function wv.robes(theme)
 	local status_ok, _ = pcall(wv.cast, "colorscheme " .. theme)
@@ -186,10 +185,10 @@ function wv.robes(theme)
 end
 
 
---- load packer if needed otherwise use spellbook like packer.startup
+--- load packer if needed otherwise use cauldron like packer.startup
 --- @param fn function
 --- @return nil
-function wv.spellbook(fn)
+function wv.cauldron(fn)
 	local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 	if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 		vim.fn.execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
