@@ -1,7 +1,7 @@
 local wv = {}
 wv.version = "0.0.1"
 wv.name = "WitchVim"
-
+wv.website = "https://github.com/DrakeAxelrod/witchvim.nvim"
 wv.g, wv.o, wv.wo, wv.bo, wv.fn, wv.cast = vim.g, vim.o, vim.wo, vim.bo, vim.fn, vim.cmd
 
 --- string.format just shorter
