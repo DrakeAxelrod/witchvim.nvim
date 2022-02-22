@@ -54,17 +54,10 @@ local function plugin_count()
 end
 
 function wv.views.footer()
-	local function align(line)
-		local padding = ""
-		for i = 1, ((70 - #line) / 2) do
-			padding = padding .. " "
-		end
-		return padding .. line .. padding
-	end
 	return {
-		align(wv.fmt("%s v%s", wv.name, wv.version)),
-		align("Loaded" .. wv.fmt(" [%s] ", plugin_count()) .. "Plugins"),
-		align(wv.website),
+		wv.fmt("                 %s %s               ", wv.name, wv.version),
+		wv.fmt("              Loaded [%s] Plugins             ", plugin_count()),
+		wv.fmt(" %s", wv.website),
 	}
 end
 
