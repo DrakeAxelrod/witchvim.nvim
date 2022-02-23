@@ -6,6 +6,34 @@ local function spell()
 	return ""
 end
 
+
+local function file_name()
+	return {
+		provider = function()
+				local filename = vim.fn.expand "%:t"
+				local extension = vim.fn.expand "%:e"
+				local icon = require("nvim-web-devicons").get_icon(filename, extension)
+				if icon == nil then
+					icon = " "
+					return icon
+				end
+				return " " .. icon .. " " .. filename .. " "
+		end,
+		enabled =  function(winid)
+				return vim.api.nvim_win_get_width(tonumber(winid) or 0) > 70
+		end,
+		-- hl = {
+		-- 		fg = default.colors.white,
+		-- 		bg = default.colors.lightbg,
+		-- },
+
+		-- right_sep = {
+		-- 		str = default.statusline_style.right,
+		-- 		hl = { fg = default.colors.lightbg, bg = default.colors.lightbg2 },
+		-- },
+	}
+end
+
 local function trailing_space()
 	-- Get the positions of trailing whitespaces from plugin 'jdhao/whitespace.nvim'.
 	local trailing_space_pos = vim.b.trailing_whitespace_pos

@@ -3,6 +3,8 @@ _wv.version = "0.0.1"
 _wv.name = "WitchVim"
 _wv.website = "https://github.com/DrakeAxelrod/witchvim.nvim"
 
+
+_wv.icons = require("witchvim.icons")
 -- colorschemes
 _wv.themes = {
 	catppuccin = "catppuccin/nvim",
