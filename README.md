@@ -1,8 +1,14 @@
 # WitchVim
 
-just seemed like a fun little project
+<div align="center">
+<img src="./media/banner.png"></img>
+</div>
 
-Lots of inspiration from packer, lunarvim, and various dotfiles
+## rational 
+
+> just seemed like a fun project
+
+> Lots of inspiration from packer, lunarvim, and various dotfiles
 
 
 ## plugin install command
