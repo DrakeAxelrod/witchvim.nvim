@@ -1,4 +1,4 @@
-# witchvim.nvim
+# WitchVim
 
 just seemed like a fun little project
 
