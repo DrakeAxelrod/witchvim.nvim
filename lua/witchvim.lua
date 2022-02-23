@@ -34,7 +34,6 @@ function wv.cauldron(fn)
   wv.potion = packer.use
   packer.startup({
 		function(use)
-			use("wbthomason/packer.nvim")
 			fn(use)
 		end,
 		config = {
