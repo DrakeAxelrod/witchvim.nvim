@@ -48,18 +48,18 @@ local function brew()
     --   { "lazygit", "<c-\\><c-g>", "LazyGit", "float" },
     -- },
   }
-	vim.api.nvim_exec([[
-            let g:toggleterm_terminal_mapping = '<C-t>'
-            autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
-            nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
-            inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
-        ]],
-		false
-	)
+	-- vim.api.nvim_exec([[
+  --           let g:toggleterm_terminal_mapping = '<C-t>'
+  --           autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+  --           nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+  --           inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+  --       ]],
+	-- 	false
+	-- )
 	function _G.set_terminal_keymaps()
 		local opts = { noremap = true }
-		vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
-		vim.api.nvim_buf_set_keymap(0, "t", "jk", [[<C-\><C-n>]], opts)
+		-- vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+		-- vim.api.nvim_buf_set_keymap(0, "t", "jk", [[<C-\><C-n>]], opts)
 		vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
 		vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
 		vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
