@@ -1,7 +1,7 @@
 
 -- colorscheme
 local function brew()
-  vim.g.rose_pine_variant = "moon"
+  -- vim.g.rose_pine_variant = "moon"
 end
 
 return {

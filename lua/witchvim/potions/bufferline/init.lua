@@ -54,7 +54,37 @@ local function brew()
 			--     return true
 			--   end
 			-- end,
-			offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+      offsets = {
+        {
+          filetype = "undotree",
+          text = "Undotree",
+          highlight = "PanelHeading",
+          padding = 1,
+        },
+        {
+          filetype = "NvimTree",
+          text = "Explorer",
+          highlight = "PanelHeading",
+          padding = 1,
+        },
+        {
+          filetype = "DiffviewFiles",
+          text = "Diff View",
+          highlight = "PanelHeading",
+          padding = 1,
+        },
+        {
+          filetype = "flutterToolsOutline",
+          text = "Flutter Outline",
+          highlight = "PanelHeading",
+        },
+        {
+          filetype = "packer",
+          text = "Packer",
+          highlight = "PanelHeading",
+          padding = 1,
+        },
+      },
 			show_buffer_icons = true,
 			show_buffer_close_icons = true,
 			show_close_icon = true,
@@ -64,11 +94,19 @@ local function brew()
 			-- [focused and unfocused]. eg: { '|', '|' }
 			separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
 			enforce_regular_tabs = true,
-			always_show_bufferline = true,
+			always_show_bufferline = false,
 			-- sort_by = 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
 			--   -- add custom logic
 			--   return buffer_a.modified > buffer_b.modified
 			-- end
+			highlights = {
+      background = {
+					gui = "italic",
+				},
+				buffer_selected = {
+					gui = "bold",
+				},
+			},
 		},
 	})
 end

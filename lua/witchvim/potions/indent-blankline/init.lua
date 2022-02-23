@@ -15,6 +15,7 @@ local function brew()
 			"fugitive",
 			"nofile",
 			"Greeter",
+			"help"
 		},
 		filetype_exclude = {
 			"NvimTree",
