@@ -150,7 +150,7 @@ end
 --- @param file string the name of the file or folder if it contains init.lua
 --- @return module
 function wv.brew(file)
-	return wv.fmt([[require("potions.%s")]], file)
+	return require(wv.fmt("potions.%s", file))
 end
 
 
